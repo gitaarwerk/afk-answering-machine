@@ -1,56 +1,21 @@
-# Express your Elf
-An add-on for World of Warcraft to express one self in a more casual and fun way.
+# AFK Answering Machine
 
-Download at: https://www.curseforge.com/wow/addons/express-your-elf
+The AFK Answering Machine is an addon for World of Warcraft that allows players to have a funny reply message when they are away from their computer. The addon comes with a range of contextual messages based on your character's class, race, gender, and more, ensuring that your voicemail is always personalized and on-point.
+Features
 
-## Features
-### Buttons
-* Who is this person behind that mighty item level 400+ armor? Introduce the real you!
-* Woo your favourite player with impressive pick-up lines
-* Open up your dreams to others, maybe, they mean something?
-* Appreciate your fellow-players with something truly special
-* Dance away into the night and sing lyrics from famous Azerothian singers
-* Express yourself with catchy phrases
+    Randomized contextual messages based on your character's class, race, gender, and more
+    Automatic message playback when you are AFK
 
-### Nurse Nancy: Ressurrection messsages
-* A redeemer alternative
-* Random messages when casting Mass Ressurrection, Single Ressurrection, Battle ress, soulstones, ankh, etc.
+## Installation
 
-#### Supported spells
-* Warlock: Soulstone
-* Paladin: Redemption, Absolution
-* Priest: Resurrection, Mass Resurrection
-* Shaman: Ancestral spirit, Reincarnation, Ancestral Vision
-* Druid: Revive, Rebirth, Revitalize
-* Monk: Resuscitate, Reawaken
-* Death Knight: Raise Ally
-* Hunter: Gift of Chi-ji
-* Engineering: Goblin Jumper cables, Goblin Jumper cables XL, Gnomish army knife
-* Other: Darkmoon Card: Twisting Nether
+To install the AFK Answering Machine, simply [download the latest release from the releases page](https://legacy.curseforge.com/wow/addons/afk-answering-machine) and extract the files to your WoW addons folder.
 
-#### Side note: 
-Nurse Nancy cannot tell in public chat channels as this is hooked to events. This is disabled by Blizzard, so will only be done in instance, raid and party chat.
-SUUEEGAH!
+## Usage
+Once installed, the AFK Answering Machine can be accessed via the AddOns menu in World of Warcraft. From here, you can customize your voicemail message and choose your preferred contextual messages. The addon will automatically play your voicemail message when you are AFK.
+Contributing
 
-### Answering Machine: A perfect assistant while you're afk
-No longer want to be sitting behind your computer to answer all those whispers for you? The answering machine gets rid.. err.. helps
-you answer your contacts when as they whisper you. Success guaranteed! No goblins or gnomes have been used engineering this machine.
+If you would like to contribute to the development of the AFK Answering Machine, please fork the repository and submit a pull request with your changes. All contributions are welcome!
 
-Just do /AFK and it will auto-set a message.
+## License
 
-### Configuration screen
-* Sets the size and positon of the Expression Buttons
-* Activate different features
-
-### General notice
-* All expressions are randomised and contextual (based on race, gender and class), to make them more..., you know,... YOU!
-* Sometimes, when updating this addon, new features have been added. Which means you may experience a reset of of settings once a while.
-
-## Commands
-* `/eyelf`: See all commands, and opens the configuration screen
- 
-* `/eyelf show`: Shows the buttons
-* `/eyelf hide`: Hides the buttons
-
-
-SUUEEGAH!
+The AFK Answering Machine is licensed under the GNUv3 License.
