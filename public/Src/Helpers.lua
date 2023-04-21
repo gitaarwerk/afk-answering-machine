@@ -78,7 +78,7 @@ function AFKAnsweringMachine.Helpers.GetPoppaMomma(gender)
 end
 
 
-function getCharacterinfo(target)
+local function getCharacterinfo(target)
     local genderTable = { "neuter or unknown", "male", "female" };
     local playerClass, englishClass, classIndex = UnitClass(target);
     local name, upName, level = UnitName(target)

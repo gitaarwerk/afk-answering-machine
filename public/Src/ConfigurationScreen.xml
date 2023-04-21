@@ -12,7 +12,7 @@
 
             local function eventHandler(AFKAnsweringMachine_ConfigScreen, event, arg1, ...)
                 if (event == "ADDON_LOADED" and arg1 == "AFKAnsweringMachine") then
-                    print("\124cffffcee2Express Your Elf is loaded. To check options; type: " .. AFKAnsweringMachineMessageColor ..  "/eyelf \124ror" .. AFKAnsweringMachineMessageColor .. " /AFKAnsweringMachine\124r.")
+                    print("\124cffffcee2Afk Answering Machine is loaded. To check options; type: " .. AFKAnsweringMachineMessageColor ..  "/afkam \124ror" .. AFKAnsweringMachineMessageColor .. " /AFKAnsweringMachine\124r.")
                     local date = GetAddOnMetadata("AFKAnsweringMachine", "X-ResetVarsDate") 
 
                     -- reset out of date addons
@@ -125,7 +125,7 @@
                     </Anchor>
                 </Anchors>
             </Texture>
-            <FontString inherits="GameFontNormal" text="Express your Elf">
+            <FontString inherits="GameFontNormal" text="AFK Answering Machine">
                 <Anchors>
                     <Anchor point="TOP" relativeTo="AFKAnsweringMachine_ConfigScreen_Header">
                         <Offset>
@@ -134,24 +134,9 @@
                     </Anchor>
                 </Anchors>
             </FontString>
-            <FontString name="nurseNancyText" inherits="GameFontNormalSmall" text="Auto ressurrection lines (soulstone, battle ress, ress, mass ress)">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativePoint="AFKAnsweringMachine_ConfigScreen_NurseNancy" x="50" y="-116"/>
-                </Anchors>
-            </FontString>
             <FontString name="answeringMachineText" inherits="GameFontNormalSmall" text="AFK Answering Machine">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativePoint="AFKAnsweringMachine_ConfigScreen_AnsweringMachine" x="50" y="-146"/>
-                </Anchors>
-            </FontString>
-            <FontString name="bombsGoBurrText" inherits="GameFontNormalSmall" text="Heroism/Bloodlust announcer">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativePoint="AFKAnsweringMachine_ConfigScreen_BombsGoBurr" x="50" y="-176"/>
-                </Anchors>
-            </FontString>
-            <FontString name="buttonInterfaceText" inherits="GameFontNormalSmall" text="Show or hide Conversation Buttons">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativePoint="AFKAnsweringMachine_ConfigScreen_ShowButtons" x="50" y="-206"/>
                 </Anchors>
             </FontString>
         </Layer>
@@ -196,26 +181,6 @@
             <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check"/>
             <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
         </CheckButton>
-
-
-        <Slider name="AFKAnsweringMachine_ConfigScreen_Scale" inherits="OptionsSliderTemplate" minValue="0.1" maxValue="1" valueStep="0.1">
-            <Size x="185" y="16" />
-            <Anchors>
-                <Anchor point="TOPLEFT" relativeKey="$parent.OutputDeviceDropdown" relativePoint="TOPLEFT" x="210" y="-225" />
-            </Anchors>
-            <Layers>
-                <Layer level="ARTWORK">
-                    <FontString name="$parentLabel" parentKey="Label" inherits="GameFontNormalSmall" text="Rating scale">
-                        <Anchors>
-                            <Anchor point="LEFT" relativePoint="LEFT" x="-160" y="0"/>
-                        </Anchors>
-                    </FontString>
-                </Layer>
-            </Layers>
-            <Scripts>
-                <OnValueChanged>AFKAnsweringMachine_SetScale(value)</OnValueChanged>
-            </Scripts>
-        </Slider>
     </Frames> 
 </Frame>
 </Ui>

@@ -1,6 +1,6 @@
 ## Title: AFK Answering Machine
-## Interface: 100000
-## X-Min-Interface: 100000
+## Interface: 100007
+## X-Min-Interface: 100007
 ## Version: @project-version@
 ## Author: Darkrider, Dunemaul (EU)
 ## Notes: Express oneself in a more casual and fun way.
@@ -9,12 +9,10 @@
 ## DefaultState: enabled
 ## X-Category: Fun, Communication, Miscellaneous
 ## X-Date: @project-date-iso@
-## X-ResetVarsDate: 2022-11-04T5:10:00Z
+## X-ResetVarsDate: 2023-04-21T00:00:00Z
 ## X-License: All Rights Reserved
 ## X-Website: https://www.curseforge.com/wow/addons/afk-answering-machine
 ## X-Curse-Project-ID: 846565
 
-Src/AltGameTooltip.xml
 Src/ConfigurationScreen.xml
 Src/Main.xml
-Src/Features/ConversationButtons/Interface.xml

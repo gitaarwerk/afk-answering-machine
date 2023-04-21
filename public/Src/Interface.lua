@@ -1,7 +1,7 @@
 AFKAnsweringMachine = {}
 AFKAnsweringMachineMessageColor = "\124cffff4f98";
 
-function dump(o)
+local function dump(o)
     if type(o) == 'table' then
         local s = '{ ';
         for k,v in pairs(o) do
@@ -14,17 +14,6 @@ function dump(o)
     end
 end
 
-function debugPrint(feature, message)
-    if (not(AFKAnsweringMachineVars)) then
-        return;
-    end
-    
-    if (AFKAnsweringMachineVars.debugMode == true) then
-        local featName = feature or "feature_not_set";
-        local prefix = "[EYELF_DEBUG (" .. feature .. ")] ";
-        print(prefix .. message);
-    end
-  end
 
 function AFKAnsweringMachine_AnsweringMachineOn()
     AFKAnsweringMachineVars.answeringMachineIsOn = true
@@ -35,12 +24,12 @@ function AFKAnsweringMachine_AnsweringMachineOff()
 end
 
 function AFKAnsweringMachine_DebugOn()
-    print('Express Your Elf: Debug mode is now ON.')
+    print('Afk Answering Machine: Debug mode is now ON.')
     AFKAnsweringMachineVars.debugMode = true
 end
 
 function AFKAnsweringMachine_DebugOff()
-    print('Express Your Elf: Debug mode is now OFF.')
+    print('Afk Answering Machine: Debug mode is now OFF.')
     AFKAnsweringMachineVars.debugMode = false
 end
 
@@ -60,7 +49,7 @@ local function AFKAnsweringMachine_Init(msg)
             AFKAnsweringMachine_DebugOn();
         end
         local dumpedVars = dump(AFKAnsweringMachineVars);
-        print("Dumped EYELF Vars: " .. dumpedVars);
+        print("Dumped AFKAM Vars: " .. dumpedVars);
     else
         AFKAnsweringMachine_ConfigScreen:Show();
         -- If not handled above, display some sort of help message
@@ -74,5 +63,5 @@ end
 
 SlashCmdList["AFKAM"] = AFKAnsweringMachine_Init;
 
-SLASH_EYELF1 = "/afkam"
-SLASH_EYELF2 = "/AFKAnsweringMachine"
+SLASH_AFKAM1 = "/afkam"
+SLASH_AFKAM2 = "/AFKAnsweringMachine"
