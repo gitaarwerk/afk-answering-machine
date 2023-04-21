@@ -1,0 +1,16 @@
+tag d1b2e54e38190fb17d7e4a91d5fb2373952e575d 1.7.0
+Author:	gitaarwerk <sourcetree@castle-v.com>
+Date:	Wed Jun 30 07:35:49 2021 +0200
+
+commit efed0056444fc14a1496a6e00d8c389e95c98439
+Author: gitaarwerk <sourcetree@castle-v.com>
+Date:   Wed Jun 30 07:24:53 2021 +0200
+
+    tested for 9.1
+
+commit c9a135476cd7951b6c0f81799ef9684e8783498f
+Author: Jordy H <5869910+gitaarwerk@users.noreply.github.com>
+Date:   Tue Jun 15 14:59:03 2021 +0200
+
+    Update html for new commands
+
