@@ -1,6 +1,6 @@
 ## Title: AFK Answering Machine
-## Interface: 100007
-## X-Min-Interface: 100007
+## Interface: 100100
+## X-Min-Interface: 100100
 ## Version: @project-version@
 ## Author: Darkrider, Dunemaul (EU)
 ## Notes: Express oneself in a more casual and fun way.

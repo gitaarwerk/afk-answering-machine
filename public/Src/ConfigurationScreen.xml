@@ -61,19 +61,18 @@
     </Size>
     <Anchors>
         <Anchor point="CENTER"/>
-        <Offset><AbsDimension x="0" y="0"/></Offset>
     </Anchors>
 
     <Layers>
         <Layer level="BACKGROUND">
             <Texture name="$parent_Background" setAllPoints="true">
                 <Color r="0" g="0" b="0" a="0.65" />
-                <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground"
+                <!-- <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground"
                     edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
                     <EdgeSize val="16"/>
                     <TileSize val="32"/>
                     <BackgroundInsets left="5" right="5" top="5" bottom="5"/>
-                </Backdrop>
+                </Backdrop> -->
             </Texture> 	   
         </Layer>
         <Layer level="BORDER" textureSubLevel="-5">
@@ -155,7 +154,7 @@
             </Scripts>
         </Button>
            
-        <CheckButton name="AFKAnsweringMachine_ConfigScreen_AnsweringMachine" inherits="OptionsCheckButtonTemplate" motionScriptsWhileDisabled="true" virtual="false">
+        <CheckButton name="AFKAnsweringMachine_ConfigScreen_AnsweringMachine" inherits="UIPanelButtonTemplate " motionScriptsWhileDisabled="true" virtual="false">
             <Size> 
                 <AbsDimension x="25" y="25"/> 
             </Size>

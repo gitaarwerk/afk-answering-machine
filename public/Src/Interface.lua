@@ -1,7 +1,7 @@
 AFKAnsweringMachine = {}
 AFKAnsweringMachineMessageColor = "\124cffff4f98";
 
-local function dump(o)
+function dump(o)
     if type(o) == 'table' then
         local s = '{ ';
         for k,v in pairs(o) do
