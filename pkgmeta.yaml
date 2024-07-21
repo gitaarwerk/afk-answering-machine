@@ -3,7 +3,7 @@ package-as: AFKAnsweringMachine
 enable-nolib-creation: no
 
 move-folders:
-  AfkAnsweringMachine/public: AFKAnsweringMachine
+  AFKAnsweringMachine/public: AFKAnsweringMachine
 
 ignore: # Files and directories beginning with a dot (such as .git) are automatically ignored, as is the pgkmeta file itself.
   - LICENSE
