@@ -5,18 +5,18 @@
 <Frame name="AFKAnsweringMachine_ConfigScreen" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent" clampedToScreen="true">
     <Scripts>
         <OnLoad>
-            self:RegisterForDrag("LeftButton")
             self:RegisterEvent("ADDON_LOADED")
+            self:RegisterForDrag("LeftButton")
             self:RegisterEvent("CHAT_MSG_WHISPER");
             self:RegisterEvent("PLAYER_FLAGS_CHANGED");
 
             local function eventHandler(AFKAnsweringMachine_ConfigScreen, event, arg1, ...)
                 if (event == "ADDON_LOADED" and arg1 == "AFKAnsweringMachine") then
                     print("\124cffffcee2Afk Answering Machine is loaded. To check options; type: " .. AFKAnsweringMachineMessageColor ..  "/afkam \124ror" .. AFKAnsweringMachineMessageColor .. " /AFKAnsweringMachine\124r.")
-                    local date = GetAddOnMetadata("AFKAnsweringMachine", "X-ResetVarsDate") 
+                    local date = C_AddOns.GetAddOnMetadata("AFKAnsweringMachine", "X-ResetVarsDate") 
 
                     -- reset out of date addons
-                    if (AFKAnsweringMachineVars and AFKAnsweringMachineVars.lastResetDate ~= date) then 
+                    if (not AFKAnsweringMachineVars == nil and AFKAnsweringMachineVars.lastResetDate ~= date) then 
                         print(AFKAnsweringMachineMessageColor .. 'Config had to be reset because of new functionality.')
                         AFKAnsweringMachineVars = nil
                     end
@@ -67,12 +67,6 @@
         <Layer level="BACKGROUND">
             <Texture name="$parent_Background" setAllPoints="true">
                 <Color r="0" g="0" b="0" a="0.65" />
-                <!-- <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground"
-                    edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-                    <EdgeSize val="16"/>
-                    <TileSize val="32"/>
-                    <BackgroundInsets left="5" right="5" top="5" bottom="5"/>
-                </Backdrop> -->
             </Texture> 	   
         </Layer>
         <Layer level="BORDER" textureSubLevel="-5">
