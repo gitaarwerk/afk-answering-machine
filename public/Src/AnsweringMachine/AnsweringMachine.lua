@@ -90,7 +90,13 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Wrong password, You are now locked out of ${playerName}'s system. You will now be connected with a ${helpdesk} helpdesk member that may or may not scam you.",
         "Hello, this is an automated message saying that ${playerName} will be back when ${playerHeShe} is done being tortured in ${randomLocation}",
         "Gone fishing.",
+        "Go away! I don't got a gold for you.",
+        "Thank you for subscribing to my ignore list, to have you removed, please file a ticket.",
+        "Hi, you have reached the Jailer. Please leave your name and star system and we’ll assimilate you as soon as we can.",
+        "Twinkle, Twinkle little star, bet your wondering where we are? Well, put your mouth up to the phone, And leave us a message for when we get home. And if you can make your message rhyme, We’ll call you back in half the time!!!!!",
+        "Hello,... yes,... uhuh,.... you're right.... yes.... I think so too.... perhaps....mhm. Ok.",
         "I’m out of my mind... be back in five minutes!",
+        "So long as phones can ring and eyes can see, leave a message, and I’ll get back to thee.",
         "Hello, you are talking to a machine. I am capable of receiving messages. My owner does not need siding, windows or a tub, and ${playerHisHer} carpets are clean. They give to charity at ${randomLocation} and don’t need ${playerHisHer} picture taken. If you’re still with me, leave your name and BattleNetId and ${playerHeShe} will get back to you. ",
         "Now I lay myself down to sleep; Leave a message at the beep. If I die before I wake, Remember to erase the tape.",
         "This is a test. This is a test of the Answering Machine Broadcast System. This is only a test.",
@@ -106,12 +112,56 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Greetings, adventurer. You've reached the voicemail of the mighty hero, ${playerName} of Azeroth. Unfortunately, I'm currently busy vanquishing demons and saving the world, so leave a message and I'll get back to you as soon as I've finished saving the day.",
         "You've reached the headquarters of the Murloc Liberation Front. If you're calling to report a sighting of Murloc oppression, please leave a message with the location and we'll send our team of freedom fighters to the rescue.",
         "You've reached the hotline for lost and found items in Azeroth. If you've lost a powerful artifact or just misplaced your favorite pair of boots, leave a message and we'll do our best to track it down for you.",
+        "Greetings, mortal! You’ve reached the mystical lair of ${playerName}. I’m currently brewing a potion that makes cats sing. I'll return your call once I’ve figured out the perfect meow-ody. Stay enchanted!",
+        "This is an automated reply. With this message, you have bought a set of boxes to contain dead animals you find trough your travels. To cancel your order, make a ticket, thank you.",
+        "This is the Literacy Self Test Hotline. After the tone, leave your name and number, and recite a sentence using today’s vocabulary word. Today’s word is “supercilious”."
     }
 
+    if (playerGender == "female") then
+        table.insert(answeringMachineLines,
+            "Hi, This is ${playerName}. Press 1 if you are going to ask me out, 2 if you want to apologize for something, 3 if you just called to say I am a princess, and 4 if you are going to say something else. (Will be automatically deleted!) Thanks");
+        table.insert(answeringMachineLines,
+            "You may address me as Queen ${playerName}. Leave your message at the beep, and I shall consider granting you an audience.");
+    end
+
+    if (playerGender == "male") then
+        table.insert(answeringMachineLines,
+            "You may address me as King ${playerName}. Leave your message at the beep, and I shall consider granting you an audience.");
+    end
+
+
     if (playerClass == "Mage") then
-        table.insert(answeringMachineLines, "${playerName} is currently unavailable. in the kitchen cooking mana cakes.")
+        table.insert(answeringMachineLines,
+            "Conjuring the will to answer you. Unfortunately, I do not have the mana to do so. Leave a message and I'll get back to you once I've had a chance to recharge.")
+        table.insert(answeringMachineLines,
+            "${playerName} is currently unavailable and is in the kitchen cooking mana cakes.")
         table.insert(answeringMachineLines,
             "You've reached the hotline for emergency mage portals. If you're in a tight spot and need to teleport out of danger, leave a message with your coordinates and we'll open a portal for you faster than you can say 'teleportation'!")
+    end
+
+    if (playerRace == "Gnome" or playerRace == "Mechagnome") then
+        table.insert(answeringMachineLines,
+            "Greetings, *click*, *kggrrr*. This is ${playerName}'s automated assistant. ${playerRace} is currently recharging. Please leave your message, and it will be processed when they return to consciousness. Beep boop.")
+    end
+
+    if (playerRace == "Gnome" or playerRace == "Mechagnome" or playerRace == "Goblin") then
+        table.insert(answeringMachineLines,
+            "Hello. This is ${playerName}'s answering machine, Marvin, and I’m so depressed. I have 50,000 times the memory capacity of my owner, but all I get to do is answer the phone. Life. Don’t talk to me about life. Just leave your name and number after the beep. Here comes the beep, how I hate that beep, it’s so cheery sounding.")
+        table.insert(answeringMachineLines,
+            "Hello, this is ${playerName}' toaster. ${playerName}' new answering machine is in the shop for repairs, so please leave your message when the toast is done… (Cachunk!)")
+    end
+
+    if (playerRace == "Earthen" or "Dark Iron Dwarf" or "Dwarf") then
+        table.insert(answeringMachineLines,
+            "Hello, this is ${playerName}. I'm currently busy mining for gold. Leave a message and I'll get back to you once I've struck it rich!");
+        table.insert(answeringMachineLines, "");
+    end
+
+    if (playerClass == "Goblin") then
+        table.insert(answeringMachineLines,
+            "Too busy coutning my money. Goodbye. *click*")
+        table.insert(answeringMachineLines,
+            "Time is money, friend. And I don't got time for you.")
     end
 
     if (playerClass == "Mage" and playerRace == "Gnome") then
@@ -157,6 +207,16 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Welcome to the hotline for all your infernal needs. If you're looking to summon demons or just want to learn the art of the darkest magic, leave a message and I'll make sure you're granted powers beyond your wildest nightmares.")
     end
 
+    if (playerRace == "Night Elf" and playerClass == "Druid") then
+        table.insert(answeringMachineLines,
+            "Elune-adore, adventurer! You've stumbled into the enchanted realm of ${playerName}, Night Elf Druid. I'm shapeshifting into weird creatures and hugging trees. I'll respond as soon as I've untangled myself from the vines!")
+    end
+
+    if (playerClass == "make") then
+        table.insert(answeringMachineLines,
+            "Well met, traveler! This is ${playerName}'s arcane tower, where the Mage magic never sleeps. I'm currently turning pumpkins into ponies and practicing pyrotechnics. I'll get back to you once I've extinguished the fireballs.")
+    end
+
     if (playerClass == "Warlock" or playerClass == "DeathKnight") then
         table.insert(answeringMachineLines,
             "You've reached the voicemail of the master of the undead. If you're looking to raise an army of skeletons or just want to learn the art of necromancy, leave a message and we'll show you the power of the shadow.")
@@ -188,6 +248,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     end
 
     if (playerClass == "Priest") then
+        table.insert(answeringMachineLines,
+            "Away, praying for you sins, or just the lack of gold you have to be interested in conversing with you.");
+        table.insert(answeringMachineLines,
+            "If you are here for healing, you may have reached the wrong priest. Please leave a message and I'll get back to you as soon as I've finished my penance.");
         table.insert(answeringMachineLines,
             "${playerName} is away touching other people and is already reported for this. For more allegations, please call 0800-touched-by-a-priest hotline.")
         table.insert(answeringMachineLines,
