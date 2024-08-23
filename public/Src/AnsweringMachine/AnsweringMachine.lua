@@ -102,7 +102,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "I cannot answer your question as I am wasted in the tavern.",
         "I cannot answer your question as I am wasted in the bar.",
         "I cannot answer your question as I am wasted in the pub.",
-        "Gone delving into the depths of Khaz Algar, nobody mentioned it's cool. If you read this message, please send blankts, and all of your gold!",,
+        "Gone delving into the depths of Khaz Algar, nobody mentioned it's cool. If you read this message, please send blankts, and all of your gold!",
         "Go away! I don't got a gold for you.",
         "No I will not fix your printer.",
         "Thank you for subscribing to my ignore list, to have you removed, please file a ticket.",
