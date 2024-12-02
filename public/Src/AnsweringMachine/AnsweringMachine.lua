@@ -64,6 +64,9 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     -- common
 
     local answeringMachineLines = {
+        "Cannot record message, tape full, BEEPGKRRFCC",
+        "Leave your message after the shriek. *shriek*",
+        "AFK, Getting longdrink, will be back in an unrealistic amount of minutes.", -- SilverNL, Talnivarr, EU
         "Hello, this is ${playerName},... hello?.... yes? This is ${playerName}... hello? *click*.",
         "The person you have whispered is currently unavailable. Please try again later.",
         "Hello? Yes, this is ${hiddenCaller},.. ehh... shit.... I mean ${playerName}.",
@@ -79,6 +82,8 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Hello. This is a machine. I am capable of receiving messages. My owner does not need gold, a new weapon, windows or a hot tub, and ${playerHisHer} carpets are clean. If you're still with me, leave your message and {playerHeShe} will get back to you.",
         "WHO.... GOES... THERE?", -- Heavylight-Talnivarr, EU
         "Gave my laptop some tea but he didn’t like it.",
+        "A quick 'I'm AFK' phrase.",
+        "Attending the annual 'How to reply to messages left to you' seminar.",
         "I can't type back right now because I have amnesia and I feel stupid talking to people I don't remember. I'd appreciate it if you could help me out by leaving my name and telling me something about myself. Thanks.",
         "Hi, this is ${playerName}. I'm sorry I can't whisper back right now. Leave a message, and then wait by your computer until I whisper you back.",
         "You're growing tired. Your eyelids are getting heavy. You feel sleepy now and are gradually losing your willpower to resist suggestions. When you hear the tone you will feel helplessly compelled to leave your login details, and a message.",
@@ -94,6 +99,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Gone questing.",
         "Gone raiding.",
         "Gone exploring.",
+        "Choose your next reply wisely, or else...",
         "Gone to the Darkmoon Faire.",
         "Gone to the Auction House.",
         "Gone robbing the guild bank",
@@ -102,9 +108,14 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "I cannot answer your question as I am wasted in the tavern.",
         "I cannot answer your question as I am wasted in the bar.",
         "I cannot answer your question as I am wasted in the pub.",
+        "We've got an A, We've got an F, We've got a K. What does that spell? AFK! Leave a message.",
+        "'MACHO, MACHO MAN! I WANT TO'... oh, sorry, I'm listening to the coolest music here right now. Can't hear you. Goodbye.",
         "Gone delving into the depths of Khaz Algar, nobody mentioned it's cool. If you read this message, please send blankts, and all of your gold!",
         "Go away! I don't got a gold for you.",
         "No I will not fix your printer.",
+        "No I will not fix your computer.",
+        "No I will not fix your internet.",
+        "Thank you for subscribing to ${playerName}'s newsletter. You will now receive a message every time ${playerHeShe} is away from the computer.",
         "Thank you for subscribing to my ignore list, to have you removed, please file a ticket.",
         "Hi, you have reached the Jailer. Please leave your name and star system and we’ll assimilate you as soon as we can.",
         "Twinkle, Twinkle little star, bet your wondering where we are? Well, put your mouth up to the phone, And leave us a message for when we get home. And if you can make your message rhyme, We’ll call you back in half the time!!!!!",
@@ -146,6 +157,8 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 
     if (playerClass == "Mage") then
         table.insert(answeringMachineLines,
+            "I’ll reply you back once I’ve defrosted.")
+        table.insert(answeringMachineLines,
             "Conjuring the will to answer you. Unfortunately, I do not have the mana to do so. Leave a message and I'll get back to you once I've had a chance to recharge.")
         table.insert(answeringMachineLines,
             "${playerName} is currently unavailable and is in the kitchen cooking mana cakes.")
@@ -153,14 +166,22 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "You've reached the hotline for emergency mage portals. If you're in a tight spot and need to teleport out of danger, leave a message with your coordinates and we'll open a portal for you faster than you can say 'teleportation'!")
     end
 
+    if (playerRace == "Gnome") then
+        table.insert(answeringMachineLines,
+            "I was born small, and you were still able to find me resting? WOW, You're determined. Leave a message and I'll get back when I want to appear again!")
+    end
+
     if (playerRace == "Gnome" or playerRace == "Mechagnome") then
+        table.insert(answeringMachineLines,
+            "I was born to be a tinkerer, not a talker. Leave a message and I'll get back to you once I've finished inventing the next big thing!")
+
         table.insert(answeringMachineLines,
             "Greetings, *click*, *kggrrr*. This is ${playerName}'s automated assistant. ${playerRace} is currently recharging. Please leave your message, and it will be processed when they return to consciousness. Beep boop.")
     end
 
     if (playerRace == "Gnome" or playerRace == "Mechagnome" or playerRace == "Goblin") then
         table.insert(answeringMachineLines,
-            "Hello. This is ${playerName}'s answering machine, Marvin. I have 50000 times the memory capacity of my owner, but all I get to do is answer the phone. Life. Don’t talk to me about life. Just leave your message after the beep. Here comes the beep.")
+            "Hello. This is ${playerName}'s answering machine, Marvin. I have 50000x the memory capacity of my owner, but all I get to do is answer the phone. Life. Don’t talk to me about life. Just leave your message.")
         table.insert(answeringMachineLines,
             "Hello, this is ${playerName}' toaster. ${playerName}' new answering machine is in the shop for repairs, so please leave your message when the toast is done… (Cachunk!)")
     end
@@ -173,14 +194,14 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 
     if (playerClass == "Goblin") then
         table.insert(answeringMachineLines,
-            "Too busy coutning my money. Goodbye. *click*")
+            "Too busy counting my money. Goodbye. *click*")
         table.insert(answeringMachineLines,
             "Time is money, friend. And I don't got time for you.")
     end
 
     if (playerClass == "Mage" and playerRace == "Gnome") then
         table.insert(answeringMachineLines,
-            "Greetings. You've reached the voicemail of the one and only gnome wizard extraordinaire. If you're calling about a magical mishap or just need some enchanting advice, leave a message and I'll get back to you faster than you can say abracadabra!")
+            "Greetings. You've reached the voicemail of the one and only gnome wizard extraordinaire. If you're calling about a magical mishap or just need some enchanting advice, leave a message and I'll get back faster than you can say abracadabra!")
     end
 
     if (playerRace == "Goblin") then
@@ -262,6 +283,14 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     end
 
     if (playerClass == "Priest") then
+        table.insert(answeringMachineLine,
+            "Please leave your confession. You have 30 seconds to repent.")
+        table.insert(answeringMachineLine,
+            "Please leave your confession. You may be forgiven, but you will never be forgotten.")
+        table.insert(answeringMachineLine,
+            "Please leave your confession. The light will guide you, but your sins will follow.")
+        table.insert(answeringMachineLine,
+            "Please leave your message. This message may or may not be recorded for the purposes of penance.")
         table.insert(answeringMachineLines,
             "Away, praying for you sins, or just the lack of gold you have to be interested in conversing with you.");
         table.insert(answeringMachineLines,
@@ -274,6 +303,8 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 
     if (playerRace == "Dracthyr") then
         table.insert(answeringMachineLines,
+            "NO, JUST BECAUSE ANDUIN'S LAST NAME IS WRYNN, DOESN'T MEAN HE'S A DRACONIC HYBRID. *click*")
+        table.insert(answeringMachineLines,
             "[screaming noises]..... ${playerName} is currently setting people on fire, ${playerHeShe} will get right back to you.")
         table.insert(answeringMachineLines,
             "An adventure isn't worth telling if there aren't any dragons in it. Right now, there's no dragon here. Find your own adventure instead!")
@@ -285,8 +316,6 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         table.insert(answeringMachineLines,
             "Hail, traveler. This is the hotline for all your dragon-related concerns. Whether you need help slaying a dragon or just want to chat with one, leave a message and we'll be in touch,...wait a minute!!!!, oh wait.. NOT HERE!")
     end
-
-
 
     if (playerRace == "Earthen") then
         table.insert(answeringMachineLines,
