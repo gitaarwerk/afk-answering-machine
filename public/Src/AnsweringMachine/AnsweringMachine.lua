@@ -14,6 +14,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 )
     local playerSex = "girls"
     local faction = UnitFactionGroup("player")
+    local d = C_DateAndTime.GetCalendarTimeFromEpoch(1e6 * 60 * 60 * 24)
 
     local hiddenCaller
     local capitalCity
@@ -140,6 +141,8 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Greetings, mortal! You’ve reached the mystical lair of ${playerName}. I’m currently brewing a potion that makes cats sing. I'll return your call once I’ve figured out the perfect meow-ody. Stay enchanted!",
         "This is an automated reply. With this message, you have bought a set of boxes to contain dead animals you find trough your travels. To cancel your order, make a ticket, thank you.",
         "This is the Literacy Self Test Hotline. After the tone, leave your name and number, and recite a sentence using today’s vocabulary word. Today’s word is “supercilious”."
+        "You've recently had contact with ${playerName}. If you're experiencing any of the following symptoms: dizziness, nausea, or a sudden urge to dance, please leave a message and we'll send a team of healers to your location.",
+        "You've recently were in contact with ${playerName}'s customer service. How would you rate your experience? Please leave a message with your feedback and we'll do our best to improve our service.",
     }
 
     if (playerGender == "female") then
@@ -329,6 +332,33 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             table.insert(answeringMachineLines,
                 "Hello, traveler. You've reached the voicemail of the mighty Earthen warrior, ${playerName}. If you're looking for help with your stone form, leave a message and I'll get back to you as soon as I've finished mining.")
         end
+    end
+
+    -- Holidays! --
+
+    -- christmas
+    if (d.month == 12 and (d.day == 25 or d.day == 26)) then
+        table.insert(answeringMachineLines, "Can't speak, eating Christmas pudding right now")
+        table.insert(answeringMachineLines, "Chasing Turkey's for my Christmas dinner in Howling Fjord right. Be back later.")
+        table.insert(answeringMachineLines, "Currently in the snow, building a snowman. Leave a message and I'll get back to you once I've finished my masterpiece!")
+        table.insert(answeringMachineLines, "Will only reply to messages that contain the words 'Merry Christmas'.")
+        table.insert(answeringMachineLines, "You've signed up to be my Christmas stuffing to go with my turkey.")
+    end
+
+    -- boxing day
+    if (d.month == 12 and d.day == 26) then
+        table.insert(answeringMachineLines, "Cannot speak. Currently unboxing all my epics from the Winter Veil presents.")
+    end
+
+    -- new year
+    if ((d.month == 12 and d.day == 31) or (d.month == 1 and d.day == 1)) then
+        table.insert(answeringMachineLines, "Currently partying like it's 1999. Leave a message and I'll get back to you once the hangover has passed!")
+        table.insert(answeringMachineLines, "You've reached the hotline for New Year's resolutions. If you're looking to make a change in the new year or just want to share your goals, leave a message and we'll help you achieve your dreams.")
+    end
+
+    -- New year's day
+    if ((d.month == 12 and d.day == 31) or (d.month == 1 and d.day == 1)) then
+        table.insert(answeringMachineLines, "Happy New Year! You've reached the voicemail of ${playerName}. If you're calling to celebrate the new year or just want to share your resolutions, leave a message and we'll ring in the new year together.")
     end
 
     -- randomize result
