@@ -1,4 +1,3 @@
--- init
 AFKAnsweringMachine.AnsweringMachine = {}
 
 function AFKAnsweringMachine.AnsweringMachine.GetMessage(
@@ -62,7 +61,6 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         capitalCity = "Azeroth"
         local oppositeSex = "guys"
     end
-    -- common
 
     local answeringMachineLines = {
         "Cannot record message, tape full, BEEPGKRRFCC",
@@ -113,9 +111,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "'MACHO, MACHO MAN! I WANT TO'... oh, sorry, I'm listening to the coolest music here right now. Can't hear you. Goodbye.",
         "Gone delving into the depths of Khaz Algar, nobody mentioned it's cool. If you read this message, please send blankts, and all of your gold!",
         "Go away! I don't got a gold for you.",
-        "No I will not fix your printer.",
-        "No I will not fix your computer.",
-        "No I will not fix your internet.",
+        "No, I will not fix your printer.",
+        "No, I will not fix your computer.",
+        "No, I will not fix your internet.",
+        "No, I will not fix your talents.",
         "Thank you for subscribing to ${playerName}'s newsletter. You will now receive a message every time ${playerHeShe} is away from the computer.",
         "Thank you for subscribing to my ignore list, to have you removed, please file a ticket.",
         "Hi, you have reached the Jailer. Please leave your name and star system and we’ll assimilate you as soon as we can.",
@@ -339,26 +338,32 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     -- christmas
     if (d.month == 12 and (d.day == 25 or d.day == 26)) then
         table.insert(answeringMachineLines, "Can't speak, eating Christmas pudding right now")
-        table.insert(answeringMachineLines, "Chasing Turkey's for my Christmas dinner in Howling Fjord right. Be back later.")
-        table.insert(answeringMachineLines, "Currently in the snow, building a snowman. Leave a message and I'll get back to you once I've finished my masterpiece!")
+        table.insert(answeringMachineLines,
+            "Chasing Turkey's for my Christmas dinner in Howling Fjord right. Be back later.")
+        table.insert(answeringMachineLines,
+            "Currently in the snow, building a snowman. Leave a message and I'll get back to you once I've finished my masterpiece!")
         table.insert(answeringMachineLines, "Will only reply to messages that contain the words 'Merry Christmas'.")
         table.insert(answeringMachineLines, "You've signed up to be my Christmas stuffing to go with my turkey.")
     end
 
     -- boxing day
     if (d.month == 12 and d.day == 26) then
-        table.insert(answeringMachineLines, "Cannot speak. Currently unboxing all my epics from the Winter Veil presents.")
+        table.insert(answeringMachineLines,
+            "Cannot speak. Currently unboxing all my epics from the Winter Veil presents.")
     end
 
     -- new year
     if ((d.month == 12 and d.day == 31) or (d.month == 1 and d.day == 1)) then
-        table.insert(answeringMachineLines, "Currently partying like it's 1999. Leave a message and I'll get back to you once the hangover has passed!")
-        table.insert(answeringMachineLines, "You've reached the hotline for New Year's resolutions. If you're looking to make a change in the new year or just want to share your goals, leave a message and we'll help you achieve your dreams.")
+        table.insert(answeringMachineLines,
+            "Currently partying like it's 1999. Leave a message and I'll get back to you once the hangover has passed!")
+        table.insert(answeringMachineLines,
+            "You've reached the hotline for New Year's resolutions. If you're looking to make a change in the new year or just want to share your goals, leave a message and we'll help you achieve your dreams.")
     end
 
     -- New year's day
     if ((d.month == 12 and d.day == 31) or (d.month == 1 and d.day == 1)) then
-        table.insert(answeringMachineLines, "Happy New Year! You've reached the voicemail of ${playerName}. If you're calling to celebrate the new year or just want to share your resolutions, leave a message and we'll ring in the new year together.")
+        table.insert(answeringMachineLines,
+            "Happy New Year! You've reached the voicemail of ${playerName}. If you're calling to celebrate the new year or just want to share your resolutions, leave a message and we'll ring in the new year together.")
     end
 
     -- randomize result
