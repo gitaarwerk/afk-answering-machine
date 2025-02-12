@@ -366,6 +366,14 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Happy New Year! You've reached the voicemail of ${playerName}. If you're calling to celebrate the new year or just want to share your resolutions, leave a message and we'll ring in the new year together.")
     end
 
+     -- valentine's day
+    if (d.month == 2 and d.day == 14) then
+        table.insert(answeringMachineLines, "Currently spreading love and joy to all the lonely hearts of Azeroth. Leave a message and I'll send you a virtual hug!")
+        table.insert(answeringMachineLines, "You've reached the hotline for all your romantic needs. If you're looking for love advice or just want to share your heart's desires, leave a message and we'll help you find your perfect match.")
+        table.insert(answeringMachineLines, "Happy Valentine's Day! You've reached the mailbox of ${playerName}. If you're calling to share your love or just want to send a virtual hug, leave a message and we'll spread the love together.")
+        table.insert(answeringMachineLines, "Currently eating chocolates that I've received. Please don't disturb me! NOMNOMNOMNOM!!!!")
+    end
+
     -- randomize result
     local pickedLine = answeringMachineLines[fastrandom(1, #answeringMachineLines)]
     local randomLocation = locations[fastrandom(1, #locations)]
