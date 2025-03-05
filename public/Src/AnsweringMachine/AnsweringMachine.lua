@@ -139,7 +139,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "You've reached the hotline for lost and found items in Azeroth. If you've lost a powerful artifact or just misplaced your favorite pair of boots, leave a message and we'll do our best to track it down for you.",
         "Greetings, mortal! You’ve reached the mystical lair of ${playerName}. I’m currently brewing a potion that makes cats sing. I'll return your call once I’ve figured out the perfect meow-ody. Stay enchanted!",
         "This is an automated reply. With this message, you have bought a set of boxes to contain dead animals you find trough your travels. To cancel your order, make a ticket, thank you.",
-        "This is the Literacy Self Test Hotline. After the tone, leave your name and number, and recite a sentence using today’s vocabulary word. Today’s word is “supercilious”."
+        "This is the Literacy Self Test Hotline. After the tone, leave your name and number, and recite a sentence using today’s vocabulary word. Today’s word is “supercilious”.",
         "You've recently had contact with ${playerName}. If you're experiencing any of the following symptoms: dizziness, nausea, or a sudden urge to dance, please leave a message and we'll send a team of healers to your location.",
         "You've recently were in contact with ${playerName}'s customer service. How would you rate your experience? Please leave a message with your feedback and we'll do our best to improve our service.",
     }
