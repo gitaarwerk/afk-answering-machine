@@ -78,7 +78,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Currently stroking many kittens to save Azeroth against the Jailer.",
         "NOT REPLYING, NOT REPLYING, NOT REPLYING! Ok..this is not me replying, but my answering machine.",
         "Hello. I'm ${playerName}'s answering machine. What are you?",
-        "Hello. This is a machine. I am capable of receiving messages. My owner does not need gold, a new weapon, windows or a hot tub, and ${playerHisHer} carpets are clean. If you're still with me, leave your message and {playerHeShe} will get back to you.",
+        "Hello. This is a machine. I am capable of receiving messages. My owner does not need gold, a new weapon, or a hot tub, and ${playerHisHer} carpets are clean. If you're still with me, leave your message and {playerHeShe} will get back to you.",
         "WHO.... GOES... THERE?", -- Heavylight-Talnivarr, EU
         "Gave my laptop some tea but he didn’t like it.",
         "A quick 'I'm AFK' phrase.",
@@ -86,9 +86,9 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "I can't type back right now because I have amnesia and I feel stupid talking to people I don't remember. I'd appreciate it if you could help me out by leaving my name and telling me something about myself. Thanks.",
         "Hi, this is ${playerName}. I'm sorry I can't whisper back right now. Leave a message, and then wait by your computer until I whisper you back.",
         "You're growing tired. Your eyelids are getting heavy. You feel sleepy now and are gradually losing your willpower to resist suggestions. When you hear the tone you will feel helplessly compelled to leave your login details, and a message.",
-        "As the void take hold, you feel you are losing your grip on reality. You begin to hallucinate. You see a telephone... The telephone is next to an answering machine. You hear a faint click and a light flashes on the answering machine. You hear a beep.",
+        "As the void take hold, you feel you are losing your grip on reality. You begin to hallucinate. You see a telephone... next to an answering machine. You hear a faint click and a light flashes on the answering machine. You hear a beep.",
         "I don't exist at the moment, but if you leave your message, BattleNetID, password and phone number, and I’ll take your identity.. ehh.. I mean, get back in touch with you.",
-        "I don't want to bore you with metaphysics, but how do you know this is an answering machine? Maybe it's a dream, or maybe it's an illusion, or maybe YOU don't really exist. One way to find out is to leave a message, and if it's reality, I will whisper you back.",
+        "I don't want to bore you with metaphysics, but how do you know this is a machine? Maybe it's a dream, an illusion, or maybe YOU don't really exist. One way to find out is to leave a message, and if it's reality, I will whisper you back.",
         "Hello, this is Zovaal, The Jailer. ${playerName} can't message you right now because HE'S DEAD! Leave your message and IF I decide to resurrect him, ${playerHeShe}’ll get back to you.",
         "You’re too late. The deadline for the ransom was one minute ago. ${playerName} is now gone with your gold and buying all the epics ${playerHeShe} likes from the Auction House. Kthxbye.",
         "Wrong password, You are now locked out of ${playerName}'s system. You will now be connected with a ${helpdesk} helpdesk member that may or may not scam you.",
@@ -134,7 +134,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "Thanks for calling the murloc sighting hotline. Unfortunately, all of our agents are currently busy probing murlocs. Please leave a message and we'll get back to you as soon as we're done.",
         "Welcome to the talk-to-a-plant hotline. If you're having trouble connecting with your indoor foliage, please leave a message and I'll arrange a consultation with a professional botanist.",
         "You've reached the voicemail of the world's most famous mime. Unfortunately, I can't talk right now, but if you leave a message, I'll respond with a silent but expressive pantomime.",
-        "Greetings, adventurer. You've reached the voicemail of the mighty, ${playerName} of Azeroth. Unfortunately, I'm currently busy vanquishing demons and saving the world, so leave a message and I'll get back to you as soon as I've finished saving the day.",
+        "Greetings, adventurer. You've reached the voicemail of the mighty, ${playerName} of Azeroth. Unfortunately, I'm currently busy vanquishing demons and saving the world, leave a message and I'll get back to you as soon as I saved the day.",
         "You've reached the headquarters of the Murloc Liberation Front. If you're calling to report a sighting of Murloc oppression, please leave a message with the location and we'll send our team of freedom fighters to the rescue.",
         "You've reached the hotline for lost and found items in Azeroth. If you've lost a powerful artifact or just misplaced your favorite pair of boots, leave a message and we'll do our best to track it down for you.",
         "Greetings, mortal! You’ve reached the mystical lair of ${playerName}. I’m currently brewing a potion that makes cats sing. I'll return your call once I’ve figured out the perfect meow-ody. Stay enchanted!",
@@ -146,7 +146,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 
     if (playerGender == "female") then
         table.insert(answeringMachineLines,
-            "Hi, This is ${playerName}. Press 1 if you are going to ask me out, 2 if you want to apologize for something, 3 if you just called to say I am a princess, and 4 if you are going to say something else. (Will be automatically deleted!) Thanks");
+            "Hi, This is ${playerName}. Press 1 if you are going to ask me out, 2 if you want to apologize for something, 3 if you just called to say I am a princess, and 4 for everything else. (Will be automatically deleted!) Thanks");
         table.insert(answeringMachineLines,
             "You may address me as Queen ${playerName}. Leave your message at the beep, and I shall consider granting you an audience.");
     end
@@ -203,7 +203,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 
     if (playerClass == "Mage" and playerRace == "Gnome") then
         table.insert(answeringMachineLines,
-            "Greetings. You've reached the voicemail of the one and only gnome wizard extraordinaire. If you're calling about a magical mishap or just need some enchanting advice, leave a message and I'll get back faster than you can say abracadabra!")
+            "Greetings. You've reached the voicemail of the one and only gnome wizard extraordinaire. Magical mishap or just need some enchanting advice? Leave a message and I'll get back faster than you can say abracadabra!")
     end
 
     if (playerRace == "Goblin") then
