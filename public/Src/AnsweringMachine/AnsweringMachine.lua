@@ -89,7 +89,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "As the void take hold, you feel you are losing your grip on reality. You begin to hallucinate. You see a telephone... next to an answering machine. You hear a faint click and a light flashes on the answering machine. You hear a beep.",
         "I don't exist at the moment, but if you leave your message, BattleNetID, password and phone number, and I’ll take your identity.. ehh.. I mean, get back in touch with you.",
         "I don't want to bore you with metaphysics, but how do you know this is a machine? Maybe it's a dream, an illusion, or maybe YOU don't really exist. One way to find out is to leave a message, and if it's reality, I will whisper you back.",
-        "Hello, this is Zovaal, The Jailer. ${playerName} can't message you right now because HE'S DEAD! Leave your message and IF I decide to resurrect him, ${playerHeShe}’ll get back to you.",
+        "Hello, this is Zovaal, The Jailer. ${playerName} can't message you right now because ${heHer}'S DEAD! Leave your message and IF I decide to resurrect him, ${playerHeShe}’ll get back to you.",
         "You’re too late. The deadline for the ransom was one minute ago. ${playerName} is now gone with your gold and buying all the epics ${playerHeShe} likes from the Auction House. Kthxbye.",
         "Wrong password, You are now locked out of ${playerName}'s system. You will now be connected with a ${helpdesk} helpdesk member that may or may not scam you.",
         "Hello, this is an automated message saying that ${playerName} will be back when ${playerHeShe} is done being tortured in ${randomLocation}",
@@ -366,12 +366,16 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Happy New Year! You've reached the voicemail of ${playerName}. If you're calling to celebrate the new year or just want to share your resolutions, leave a message and we'll ring in the new year together.")
     end
 
-     -- valentine's day
+    -- valentine's day
     if (d.month == 2 and d.day == 14) then
-        table.insert(answeringMachineLines, "Currently spreading love and joy to all the lonely hearts of Azeroth. Leave a message and I'll send you a virtual hug!")
-        table.insert(answeringMachineLines, "You've reached the hotline for all your romantic needs. If you're looking for love advice or just want to share your heart's desires, leave a message and we'll help you find your perfect match.")
-        table.insert(answeringMachineLines, "Happy Valentine's Day! You've reached the mailbox of ${playerName}. If you're calling to share your love or just want to send a virtual hug, leave a message and we'll spread the love together.")
-        table.insert(answeringMachineLines, "Currently eating chocolates that I've received. Please don't disturb me! NOMNOMNOMNOM!!!!")
+        table.insert(answeringMachineLines,
+            "Currently spreading love and joy to all the lonely hearts of Azeroth. Leave a message and I'll send you a virtual hug!")
+        table.insert(answeringMachineLines,
+            "You've reached the hotline for all your romantic needs. If you're looking for love advice or just want to share your heart's desires, leave a message and we'll help you find your perfect match.")
+        table.insert(answeringMachineLines,
+            "Happy Valentine's Day! You've reached the mailbox of ${playerName}. If you're calling to share your love or just want to send a virtual hug, leave a message and we'll spread the love together.")
+        table.insert(answeringMachineLines,
+            "Currently eating chocolates that I've received. Please don't disturb me! NOMNOMNOMNOM!!!!")
     end
 
     -- randomize result
