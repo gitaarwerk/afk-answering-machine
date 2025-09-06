@@ -63,6 +63,9 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     end
 
     local answeringMachineLines = {
+        "You have reached your daily whisper limit to ${playerName}. Try again tomorrow.",
+        "Please insert more gold before you can message ${playerName} again.",
+        "*automated voice*: YOU RANG!!!????",
         "Cannot record message, tape full, BEEPGKRRFCC",
         "Leave your message after the shriek. *shriek*",
         "AFK, Getting longdrink, will be back in an unrealistic amount of minutes.", -- SilverNL, Talnivarr, EU
