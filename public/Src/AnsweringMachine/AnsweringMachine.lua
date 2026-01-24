@@ -296,13 +296,13 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     end
 
     if (playerClass == "Priest") then
-        table.insert(answeringMachineLine,
+        table.insert(answeringMachineLines,
             "Please leave your confession. You have 30 seconds to repent.")
-        table.insert(answeringMachineLine,
+        table.insert(answeringMachineLines,
             "Please leave your confession. You may be forgiven, but you will never be forgotten.")
-        table.insert(answeringMachineLine,
+        table.insert(answeringMachineLines,
             "Please leave your confession. The light will guide you, but your sins will follow.")
-        table.insert(answeringMachineLine,
+        table.insert(answeringMachineLines,
             "Please leave your message. This message may or may not be recorded for the purposes of penance.")
         table.insert(answeringMachineLines,
             "Away, praying for you sins, or just the lack of gold you have to be interested in conversing with you.");
@@ -416,7 +416,6 @@ end
 function AFKAnsweringMachine.AnsweringMachine.run()
     local prefix = "[Answering Machine]: "
     if (UnitIsAFK("player")) then
-        local answeringMachineLine
         local playerName, playerGender, playerClass, playerRace, playerLevel = AFKAnsweringMachine.Helpers
             .GetPlayerInformation()
 
@@ -438,7 +437,7 @@ function AFKAnsweringMachine.AnsweringMachine.run()
         )
 
         if (answeringMachineLine ~= nil) then
-            SendChatMessage(answeringMachineLine, "AFK", nil, author)
+            C_ChatInfo.SendChatMessage(answeringMachineLine, "AFK", nil, nil)
             print(AFKAnsweringMachineMessageColor .. 'Message set to: \124r\124cffffcee2' .. answeringMachineLine)
         end
     end
