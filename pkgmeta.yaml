@@ -11,6 +11,9 @@ ignore: # Files and directories beginning with a dot (such as .git) are automati
   - curseForgeText.txt
   - pkgmeta.yaml
   - .gitignore
+  - node_modules
+  - package.json
+  
 
 license-output: LICENSE.txt
 
