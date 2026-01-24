@@ -169,6 +169,8 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "${playerName} is currently unavailable and is in the kitchen cooking mana cakes.")
         table.insert(answeringMachineLines,
             "You've reached the hotline for emergency mage portals. If you're in a tight spot and need to teleport out of danger, leave a message with your coordinates and we'll open a portal for you faster than you can say 'teleportation'!")
+        table.insert(answeringMachineLines,
+            "You have reached the tower of the Archmage ${playerName}. I'm currently studying forbidden spells or napping. Leave a message before the rune fades.")
     end
 
     if (playerRace == "Gnome") then
@@ -278,6 +280,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Psst. You've reached the hotline for assassination services. If you need help taking out a target or just want to learn the art of deadly poisons, leave a message and we'll ensure your success in your next mission!")
         table.insert(answeringMachineLines,
             "Uh, hey...it's the rogue. If you're into sneaking around and being awkward in social situations, leave a message and let's see if we can make each other feel uncomfortable.")
+        table.insert(answeringMachineLines,
+            "You’ve reached ${playerName}. I'm either sneaking, stealing, or pretending not to exist. Leave a message… quietly.")
+        table.insert(answeringMachineLines,
+            "Message received. Whether I acknowledge it depends on your stealth detection.")
     end
 
     if (playerClass == "Paladin" or playerClass == "Priest") then
@@ -285,6 +291,8 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "${playerName} is currently staring into an eclipse. Thinking the world going to be ending soon, including burning ${playerHisHer} eyes.")
         table.insert(answeringMachineLines,
             "Howdy. You've reached the hotline for smiting services. If you need help vanquishing evil or just want to learn the art of divine")
+        table.insert(answeringMachineLines,
+            "You dare reach my lair? Leave a message. I may return your call... or burn the village. -- oops, that was Arthas speaking... sorry.")
     end
 
     if (playerClass == "Priest") then
