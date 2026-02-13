@@ -96,6 +96,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "You’re too late. The deadline for the ransom was one minute ago. ${playerName} is now gone with your gold and buying all the epics ${playerHeShe} likes from the Auction House. Kthxbye.",
         "Wrong password, You are now locked out of ${playerName}'s system. You will now be connected with a ${helpdesk} helpdesk member that may or may not scam you.",
         "Hello, this is an automated message saying that ${playerName} will be back when ${playerHeShe} is done being tortured in ${randomLocation}",
+        "Currently rearranging my housting. This new carpet really ties the house together",
         "Gone fishing.",
         "Gone phishing.",
         "Gone questing.",
@@ -157,6 +158,17 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     if (playerGender == "male") then
         table.insert(answeringMachineLines,
             "You may address me as King ${playerName}. Leave your message at the beep, and I shall consider granting you an audience.");
+    end
+
+    if (playerRace == "Pandaren") then
+        table.insert(answeringMachineLines,
+            "Ni hao! You've reached the hotline for all your panda needs. If you're looking for help with your inner peace or just want to know more about the art of kung fu, leave a message and we'll show you how to be a true panda master!")
+
+        table.insert(answeringMachineLines,
+            "Welcome to the hotline for all your tea-related needs. If you're looking for advice on brewing the perfect cup of tea or just want to chat about your favorite blends, leave a message and we'll steep in conversation together!"
+        )
+        table.insert(answeringMachineLines,
+            "Currently not able to answer while Lorewalker Cho is telling me a story about the time he met a squirrel.")
     end
 
 
