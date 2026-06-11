@@ -1,6 +1,6 @@
 ## Title: AFK Answering Machine
-## Interface: 120000
-## X-Min-Interface: 120000
+## Interface: 120000, 120005
+## X-Min-Interface: 120000, 120005
 ## X-Future-Interface: TBA
 ## Version: @project-version@
 ## IconTexture: Interface\AddOns\AFKAnsweringMachine\addonIcon.jpg

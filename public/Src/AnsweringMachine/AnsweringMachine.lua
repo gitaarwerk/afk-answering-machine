@@ -14,7 +14,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     local playerSex = "girls"
     local faction = UnitFactionGroup("player")
     local d = C_DateAndTime.GetCalendarTimeFromEpoch(1e6 * 60 * 60 * 24)
-
+    local pickedLine
     local hiddenCaller
     local capitalCity
     local helpdesk
@@ -401,11 +401,11 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Currently eating chocolates that I've received. Please don't disturb me! NOMNOMNOMNOM!!!!")
     end
 
-    -- randomize result
-    local pickedLine = answeringMachineLines[fastrandom(1, #answeringMachineLines)]
-    local randomLocation = locations[fastrandom(1, #locations)]
+    local randomLocation = locations[math.random(1, #locations)]
+    pickedLine = AFKAnsweringMachine.RandomizeUtil.GetRandomized("pickedLine", answeringMachineLines, targetName)
 
-    return AFKAnsweringMachine.Helpers.parseText(
+
+    local parsedLine = AFKAnsweringMachine.Helpers.parseText(
         pickedLine,
         {
             playerName = playerName,
@@ -423,6 +423,21 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             randomLocation = randomLocation
         }
     )
+
+      if #parsedLine > 254 then
+        AFKAnsweringMachine.RandomizeUtil.ResetContext("pickedLine")
+        return AFKAnsweringMachine.AnsweringMachine.GetMessage(playerName,
+    playerGender,
+    playerClass,
+    playerRace,
+    playerLevel,
+    playerManWoman,
+    playerGuyGirl,
+    playerHisHer,
+    playerHeShe)
+    else
+        return parsedLine
+    end
 end
 
 function AFKAnsweringMachine.AnsweringMachine.run()
