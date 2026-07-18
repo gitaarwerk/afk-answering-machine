@@ -39,3 +39,8 @@ luac.out
 *.x86_64
 *.hex
 
+# Node & generated files
+node_modules/
+.release-stats.md
+.release-stats.json
+package-lock.json
