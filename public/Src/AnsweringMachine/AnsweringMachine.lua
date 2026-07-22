@@ -198,6 +198,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Currently not able to answer while Lorewalker Cho is telling me a story about the time he met a squirrel.")
     end
 
+    if (playerRace == Race.Tauren or playerRace == Race.HighmountainTauren) then
+        table.insert(answeringMachineLines, "Currently hanging around in the meadow.")
+    end
+
 
     if (playerClass == "Mage") then
         table.insert(answeringMachineLines,
