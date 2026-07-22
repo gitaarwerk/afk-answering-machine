@@ -148,6 +148,24 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "You've recently were in contact with ${playerName}'s customer service. How would you rate your experience? Please leave a message with your feedback and we'll do our best to improve our service.",
     }
 
+    
+    if (playerRace == "Haranir") then
+        table.insert(answeringMachineLines, "At the bodypainter. Be back soon.")
+        table.insert(answeringMachineLines, "We are one people. We answer the same line. BEEP!")
+        table.insert(answeringMachineLines, "Picking mushrooms, or spacing out on them.")
+        table.insert(answeringMachineLines, "Listening to the Song of the World. It can take some time...")
+        table.insert(answeringMachineLines, "Practising my quill bat technique. I'm probably still hanging with my bros somewhere.")
+        table.insert(answeringMachineLines, "Practising my quill bat technique. I'm probably still hanging with my bros somewhere.")
+
+        if (playerGender == "male") then
+            table.insert(answeringMachineLines, "I'm BATMAN! and I'm fighting crooks right now!")
+            table.insert(answeringMachineLines, "I am vengeance. I am the night. I am Batman! And... I'm away right now.")
+            table.insert(answeringMachineLines, "Leave your message at Alfred Pennyworth.")
+            table.insert(answeringMachineLines, "I'm cool, like BATMAN, but I am still looking for a mansion. Be back later.")
+            table.insert(answeringMachineLines, "Hello, This is Bruce Wayne. Oh err.. I mean ${playerName}, still looking for my identity. Bye!")
+        end
+    end
+
     if (playerGender == "female") then
         table.insert(answeringMachineLines,
             "Hi, This is ${playerName}. Press 1 if you are going to ask me out, 2 if you want to apologize for something, 3 if you just called to say I am a princess, and 4 for everything else. (Will be automatically deleted!) Thanks");
