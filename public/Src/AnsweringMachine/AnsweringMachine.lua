@@ -184,6 +184,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     end
 
     if (playerRace == "Pandaren") then
+        table.insert(answeringMachineLines, "NO DARWIN!!, IT'S NOT MY TIME YET!")
+        table.insert(answeringMachineLines, "Eating bamboo. There's sooo much here!!!")
+        table.insert(answeringMachineLines, "Yes, you've seen me wave at you at the zoo...")
+        table.insert(answeringMachineLines, "Did you know Pandaren poop a hundred times a day. So give me some space, yes!?")
         table.insert(answeringMachineLines,
             "Ni hao! You've reached the hotline for all your panda needs. If you're looking for help with your inner peace or just want to know more about the art of kung fu, leave a message and we'll show you how to be a true panda master!")
 
