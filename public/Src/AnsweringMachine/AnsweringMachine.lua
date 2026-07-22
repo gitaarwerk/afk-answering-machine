@@ -202,8 +202,21 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         table.insert(answeringMachineLines, "Currently hanging around in the meadow.")
     end
 
+    if (playerRace == Race.Undead or playerRace == Race.Scourge) then
+        table.insert(answeringMachineLines, "Looking for my shoulder bone, have you seen it? if yes, leave a message.")
+        table.insert(answeringMachineLines, "My friend needs me in his soupe, be back when I've been cooked.")
+        table.insert(answeringMachineLines, "Getting my bones sharpened, be back in a jiffy.")
+        table.insert(answeringMachineLines, "Be back in 5! My spine needed a stretch, and I'm letting my joints decay.")
+        table.insert(answeringMachineLines, "Structural decay was emminent, so I am paying a visit to my macerating toilet.")
+        table.insert(answeringMachineLines, "If you are the embalmer; YOU'VE DONE A BAD JOB! NOT TAKING YOUR BILL!")
+        table.insert(answeringMachineLines, "Picking a bone with someone else, wait in line!")
+            table.insert(answeringMachineLines,
+            "Greetings, mortal. You've reached the voicemail of the immortal and all-powerful Lich King. If you're calling to challenge me to a duel or just want to know the secrets of the undead, leave a message and I'll consider your request.")
+    end
 
-    if (playerClass == "Mage") then
+    if (playerClass == Class.Mage) then
+        table.insert(answeringMachineLines, "Error: Portal misfired. I am trapped in another realm until further notice. Leave a message to help guide me back!")
+        table.insert(answeringMachineLines, "Currently away fighting dragons. Or buying groceries. Both require high stamina. Leave a scroll after the beep!")
         table.insert(answeringMachineLines,
             "I’ll reply you back once I’ve defrosted.")
         table.insert(answeringMachineLines,
