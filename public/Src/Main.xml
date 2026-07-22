@@ -3,6 +3,7 @@
     <Script file="Src/Interface.lua"/>
     <Script file="Src/Helpers.lua"/>
     <Script file="Src/Utilities/RandomizeUtil.lua"/>
+    <Script file="Src/Constants/Constants.lua" />
 
     <Script file="Src/AnsweringMachine/AnsweringMachine.lua"/>
 </Ui>

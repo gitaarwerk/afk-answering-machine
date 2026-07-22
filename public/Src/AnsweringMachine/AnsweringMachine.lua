@@ -1,4 +1,6 @@
 AFKAnsweringMachine.AnsweringMachine = {}
+local Class = AFKAnsweringMachine.Constants.Class
+local Race = AFKAnsweringMachine.Constants.Race
 
 function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     playerName,
@@ -146,10 +148,13 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "This is the Literacy Self Test Hotline. After the tone, leave your name and number, and recite a sentence using today’s vocabulary word. Today’s word is “supercilious”.",
         "You've recently had contact with ${playerName}. If you're experiencing any of the following symptoms: dizziness, nausea, or a sudden urge to dance, please leave a message and we'll send a team of healers to your location.",
         "You've recently were in contact with ${playerName}'s customer service. How would you rate your experience? Please leave a message with your feedback and we'll do our best to improve our service.",
+        "beep beep / beeeep_beeeep_beeeep / beeeep_beeeep_beep / beep",
+        "I’m currently resting at the local tavern. Leave your quest details after the beep, and I shall review them upon my return.",
+        "Still unpacking all my loot from my last raid. (Who am I kidding, i'm sulking over another duplicate drop...)"
     }
 
     
-    if (playerRace == "Haranir") then
+    if (playerRace == Race.Haranir) then
         table.insert(answeringMachineLines, "At the bodypainter. Be back soon.")
         table.insert(answeringMachineLines, "We are one people. We answer the same line. BEEP!")
         table.insert(answeringMachineLines, "Picking mushrooms, or spacing out on them.")
