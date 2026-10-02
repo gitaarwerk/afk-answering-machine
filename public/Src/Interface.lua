@@ -33,6 +33,9 @@ function AFKAnsweringMachine_DebugOff()
     AFKAnsweringMachineVars.debugMode = false
 end
 
+function AFKAnsweringMachine_RetryMessage(fun, message)
+end
+
 
 local function AFKAnsweringMachine_Init(msg)
     -- pattern matching that skips leading whitespace and whitespace between cmd and args
