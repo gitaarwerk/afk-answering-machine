@@ -4,8 +4,8 @@
 ## X-Future-Interface: TBA
 ## Version: @project-version@
 ## IconTexture: Interface\AddOns\AFKAnsweringMachine\addonIcon.jpg
-## Author: Darkrider, Dunemaul (EU)
-## Notes: Express oneself in a more casual and fun way.
+## Author: Space Corp
+## Notes: Automatically replies when you're AFK.
 ## SavedVariablesPerCharacter: AFKAnsweringMachineVars
 ## LoadOnDemand: 0
 ## DefaultState: enabled

@@ -1,4 +1,6 @@
 AFKAnsweringMachine.AnsweringMachine = {}
+local Class = AFKAnsweringMachine.Constants.Class
+local Race = AFKAnsweringMachine.Constants.Race
 
 function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     playerName,
@@ -14,7 +16,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     local playerSex = "girls"
     local faction = UnitFactionGroup("player")
     local d = C_DateAndTime.GetCalendarTimeFromEpoch(1e6 * 60 * 60 * 24)
-
+    local pickedLine
     local hiddenCaller
     local capitalCity
     local helpdesk
@@ -146,7 +148,28 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         "This is the Literacy Self Test Hotline. After the tone, leave your name and number, and recite a sentence using today’s vocabulary word. Today’s word is “supercilious”.",
         "You've recently had contact with ${playerName}. If you're experiencing any of the following symptoms: dizziness, nausea, or a sudden urge to dance, please leave a message and we'll send a team of healers to your location.",
         "You've recently were in contact with ${playerName}'s customer service. How would you rate your experience? Please leave a message with your feedback and we'll do our best to improve our service.",
+        "beep beep / beeeep_beeeep_beeeep / beeeep_beeeep_beep / beep",
+        "I’m currently resting at the local tavern. Leave your quest details after the beep, and I shall review them upon my return.",
+        "Still unpacking all my loot from my last raid. (Who am I kidding, i'm sulking over another duplicate drop...)"
     }
+
+    
+    if (playerRace == Race.Haranir) then
+        table.insert(answeringMachineLines, "At the bodypainter. Be back soon.")
+        table.insert(answeringMachineLines, "We are one people. We answer the same line. BEEP!")
+        table.insert(answeringMachineLines, "Picking mushrooms, or spacing out on them.")
+        table.insert(answeringMachineLines, "Listening to the Song of the World. It can take some time...")
+        table.insert(answeringMachineLines, "Practising my quill bat technique. I'm probably still hanging with my bros somewhere.")
+        table.insert(answeringMachineLines, "Practising my quill bat technique. I'm probably still hanging with my bros somewhere.")
+
+        if (playerGender == "male") then
+            table.insert(answeringMachineLines, "I'm BATMAN! and I'm fighting crooks right now!")
+            table.insert(answeringMachineLines, "I am vengeance. I am the night. I am Batman! And... I'm away right now.")
+            table.insert(answeringMachineLines, "Leave your message at Alfred Pennyworth.")
+            table.insert(answeringMachineLines, "I'm cool, like BATMAN, but I am still looking for a mansion. Be back later.")
+            table.insert(answeringMachineLines, "Hello, This is Bruce Wayne. Oh err.. I mean ${playerName}, still looking for my identity. Bye!")
+        end
+    end
 
     if (playerGender == "female") then
         table.insert(answeringMachineLines,
@@ -161,6 +184,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
     end
 
     if (playerRace == "Pandaren") then
+        table.insert(answeringMachineLines, "NO DARWIN!!, IT'S NOT MY TIME YET!")
+        table.insert(answeringMachineLines, "Eating bamboo. There's sooo much here!!!")
+        table.insert(answeringMachineLines, "Yes, you've seen me wave at you at the zoo...")
+        table.insert(answeringMachineLines, "Did you know Pandaren poop a hundred times a day. So give me some space, yes!?")
         table.insert(answeringMachineLines,
             "Ni hao! You've reached the hotline for all your panda needs. If you're looking for help with your inner peace or just want to know more about the art of kung fu, leave a message and we'll show you how to be a true panda master!")
 
@@ -171,8 +198,25 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Currently not able to answer while Lorewalker Cho is telling me a story about the time he met a squirrel.")
     end
 
+    if (playerRace == Race.Tauren or playerRace == Race.HighmountainTauren) then
+        table.insert(answeringMachineLines, "Currently hanging around in the meadow.")
+    end
 
-    if (playerClass == "Mage") then
+    if (playerRace == Race.Undead or playerRace == Race.Scourge) then
+        table.insert(answeringMachineLines, "Looking for my shoulder bone, have you seen it? if yes, leave a message.")
+        table.insert(answeringMachineLines, "My friend needs me in his soupe, be back when I've been cooked.")
+        table.insert(answeringMachineLines, "Getting my bones sharpened, be back in a jiffy.")
+        table.insert(answeringMachineLines, "Be back in 5! My spine needed a stretch, and I'm letting my joints decay.")
+        table.insert(answeringMachineLines, "Structural decay was emminent, so I am paying a visit to my macerating toilet.")
+        table.insert(answeringMachineLines, "If you are the embalmer; YOU'VE DONE A BAD JOB! NOT TAKING YOUR BILL!")
+        table.insert(answeringMachineLines, "Picking a bone with someone else, wait in line!")
+            table.insert(answeringMachineLines,
+            "Greetings, mortal. You've reached the voicemail of the immortal and all-powerful Lich King. If you're calling to challenge me to a duel or just want to know the secrets of the undead, leave a message and I'll consider your request.")
+    end
+
+    if (playerClass == Class.Mage) then
+        table.insert(answeringMachineLines, "Error: Portal misfired. I am trapped in another realm until further notice. Leave a message to help guide me back!")
+        table.insert(answeringMachineLines, "Currently away fighting dragons. Or buying groceries. Both require high stamina. Leave a scroll after the beep!")
         table.insert(answeringMachineLines,
             "I’ll reply you back once I’ve defrosted.")
         table.insert(answeringMachineLines,
@@ -185,12 +229,12 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "You have reached the tower of the Archmage ${playerName}. I'm currently studying forbidden spells or napping. Leave a message before the rune fades.")
     end
 
-    if (playerRace == "Gnome") then
+    if (playerRace == Race.Gnome) then
         table.insert(answeringMachineLines,
             "I was born small, and you were still able to find me resting? WOW, You're determined. Leave a message and I'll get back when I want to appear again!")
     end
 
-    if (playerRace == "Gnome" or playerRace == "Mechagnome") then
+    if (playerRace == Race.Gnome or playerRace == Race.Mechagnome) then
         table.insert(answeringMachineLines,
             "I was born to be a tinkerer, not a talker. Leave a message and I'll get back to you once I've finished inventing the next big thing!")
 
@@ -198,7 +242,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Greetings, *click*, *kggrrr*. This is ${playerName}'s automated assistant. ${playerRace} is currently recharging. Please leave your message, and it will be processed when they return to consciousness. Beep boop.")
     end
 
-    if (playerRace == "Gnome" or playerRace == "Mechagnome" or playerRace == "Goblin") then
+    if (playerRace == Race.Gnome or playerRace == Race.Mechagnome or playerRace == Race.Goblin) then
         table.insert(answeringMachineLines,
             "Hello. This is ${playerName}'s answering machine, Marvin. I have 50000x the memory capacity of my owner, but all I get to do is answer the phone. Life. Don’t talk to me about life. Just leave your message.")
         table.insert(answeringMachineLines,
@@ -216,36 +260,33 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Too busy counting my money. Goodbye. *click*")
         table.insert(answeringMachineLines,
             "Time is money, friend. And I don't got time for you.")
+            table.insert(answeringMachineLines, "Trying to film my child's first explosion. Be right back!")
+        
     end
 
-    if (playerClass == "Mage" and playerRace == "Gnome") then
+    if (playerClass == Class.Mage and playerRace == Race.Gnome) then
         table.insert(answeringMachineLines,
             "Greetings. You've reached the voicemail of the one and only gnome wizard extraordinaire. Magical mishap or just need some enchanting advice? Leave a message and I'll get back faster than you can say abracadabra!")
     end
 
-    if (playerRace == "Goblin") then
+    if (playerRace == Race.Goblin) then
         table.insert(answeringMachineLines,
             "Welcome to the hotline for exiled goblins. If you're a former member of the Bilgewater Cartel seeking refuge, leave a message and we'll arrange a clandestine meeting at a secret location.")
     end
 
-    if (playerRace == "Gnome") then
+    if (playerRace == Race.Gnome) then
         table.insert(answeringMachineLines,
             "Welcome to the hotline for gnome engineering. If you're in need of a new mechanical contraption or just want to discuss the latest innovations in gnome technology, leave a message and we'll tinker with it together!")
     end
 
-    if (playerRace == "Scourge") then
-        table.insert(answeringMachineLines,
-            "Greetings, mortal. You've reached the voicemail of the immortal and all-powerful Lich King. If you're calling to challenge me to a duel or just want to know the secrets of the undead, leave a message and I'll consider your request.")
-    end
-
-    if (playerClass == "Druid") then
+    if (playerClass == Class.Druid) then
         table.insert(answeringMachineLines,
             "${playerName} is currently prowled and wanted to avoid you. Unfortunately, you keep whispering this answering machine. This message will be deleted. Thank you. Goodbye!") -- Wildhuntz-Boulderfist
         table.insert(answeringMachineLines,
             "Welcome to the voicemail of wise druid ${playerName}. If you're looking for guidance in the ways of nature or just want to know how to grow a beautiful garden, leave a message and we'll show you the secrets of the forest.")
     end
 
-    if (playerClass == "Hunter") then
+    if (playerClass == Class.Hunter) then
         table.insert(answeringMachineLines,
             "${playerName} is taming some wild kitten. As it's a diligent task, ${playerHeShe} will be back later.")
         table.insert(answeringMachineLines,
@@ -254,36 +295,37 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Greetings. You've reached the hotline for emergency healing. If you or your group are in need of a quick patch-up or just want to learn the art of healing spells, leave a message and we'll make sure you're back to full health in no time.")
     end
 
-    if (playerClass == "Warlock") then
+    if (playerClass == Class.Warlock) then
         table.insert(answeringMachineLines,
             "${playerName} is in some dimensional rift right now, speaking all weird words and all. Or... ${playerHeShe} is on its way to sacrifice you.")
         table.insert(answeringMachineLines,
             "Welcome to the hotline for all your infernal needs. If you're looking to summon demons or just want to learn the art of the darkest magic, leave a message and I'll make sure you're granted powers beyond your wildest nightmares.")
     end
 
-    if (playerRace == "Night Elf" and playerClass == "Druid") then
+    if (playerRace == Race.NightElf and playerClass == "Druid") then
         table.insert(answeringMachineLines,
             "Elune-adore, adventurer! You've stumbled into the enchanted realm of ${playerName}, Night Elf Druid. I'm shapeshifting into weird creatures and hugging trees. I'll respond as soon as I've untangled myself from the vines!")
     end
 
-    if (playerClass == "make") then
+    if (playerClass == Class.Mage) then
         table.insert(answeringMachineLines,
             "Well met, traveler! This is ${playerName}'s arcane tower, where the Mage magic never sleeps. I'm currently turning pumpkins into ponies and practicing pyrotechnics. I'll get back to you once I've extinguished the fireballs.")
     end
 
-    if (playerClass == "Warlock" or playerClass == "DeathKnight") then
+    if (playerClass == Class.Warlock or playerClass == Class.DeathKnight) then
         table.insert(answeringMachineLines,
             "You've reached the voicemail of the master of the undead. If you're looking to raise an army of skeletons or just want to learn the art of necromancy, leave a message and we'll show you the power of the shadow.")
     end
 
-    if (playerClass == "Warrior") then
+    if (playerClass == Class.Warrior) then
         table.insert(answeringMachineLines,
             "Greetings. You've reached the voicemail of the legendary swordmaster ${playerName}. If you need help honing your skills or just want to challenge me to a duel, leave a message and I'll answer your call to battle!")
         table.insert(answeringMachineLines,
             "Welcome to the hotline for all your berserking needs. If you need to tap into your inner fury or just want to learn the art of the rage, leave a message and we'll teach you how to go wild!")
     end
 
-    if (playerClass == "Rogue") then
+    if (playerClass == Class.Rogue) then
+        table.insert(answeringMachineLines, "Rolled a natural 20 on my stealth check. You can't see me, and I can't hear you. Leave your message after the beep!")
         table.insert(answeringMachineLines,
             "Welcome to the hotline for all your sneaky needs. If you need help slipping past your enemies or just want to learn the art of stealth, leave a message and we'll show you how to stay hidden in the shadows.")
         table.insert(answeringMachineLines,
@@ -298,7 +340,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Message received. Whether I acknowledge it depends on your stealth detection.")
     end
 
-    if (playerClass == "Paladin" or playerClass == "Priest") then
+    if (playerClass == Class.Paladin or playerClass == Class.Priest) then
         table.insert(answeringMachineLines,
             "${playerName} is currently staring into an eclipse. Thinking the world going to be ending soon, including burning ${playerHisHer} eyes.")
         table.insert(answeringMachineLines,
@@ -307,7 +349,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "You dare reach my lair? Leave a message. I may return your call... or burn the village. -- oops, that was Arthas speaking... sorry.")
     end
 
-    if (playerClass == "Priest") then
+    if (playerClass == Class.Priest) then
         table.insert(answeringMachineLines,
             "Please leave your confession. You have 30 seconds to repent.")
         table.insert(answeringMachineLines,
@@ -340,9 +382,10 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
         table.insert(answeringMachineLines, "Draco dormiens nunquam titillandus.")
         table.insert(answeringMachineLines,
             "Hail, traveler. This is the hotline for all your dragon-related concerns. Whether you need help slaying a dragon or just want to chat with one, leave a message and we'll be in touch,...wait a minute!!!!, oh wait.. NOT HERE!")
+            table.insert(answeringMachineLines, "Currently in the cellar, checking the casks. HIC!")
     end
 
-    if (playerRace == "Earthen") then
+    if (playerRace == Race.Earthen) then
         table.insert(answeringMachineLines,
             "Currently, I'm just counting rocks somewhere. I'll be back before you drop a stone.")
         table.insert(answeringMachineLines,
@@ -350,7 +393,7 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
 
         table.insert(answeringMachineLines, "");
 
-        if (playerClass == "Warrior") then
+        if (playerClass == Class.Warrior) then
             table.insert(answeringMachineLines,
                 "Hello, traveler. You've reached the voicemail of the mighty Earthen warrior, ${playerName}. If you're looking for help with your stone form, leave a message and I'll get back to you as soon as I've finished mining.")
         end
@@ -401,11 +444,11 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             "Currently eating chocolates that I've received. Please don't disturb me! NOMNOMNOMNOM!!!!")
     end
 
-    -- randomize result
-    local pickedLine = answeringMachineLines[fastrandom(1, #answeringMachineLines)]
-    local randomLocation = locations[fastrandom(1, #locations)]
+    local randomLocation = locations[math.random(1, #locations)]
+    pickedLine = AFKAnsweringMachine.RandomizeUtil.GetRandomized("pickedLine", answeringMachineLines, targetName)
 
-    return AFKAnsweringMachine.Helpers.parseText(
+
+    local parsedLine = AFKAnsweringMachine.Helpers.parseText(
         pickedLine,
         {
             playerName = playerName,
@@ -423,6 +466,21 @@ function AFKAnsweringMachine.AnsweringMachine.GetMessage(
             randomLocation = randomLocation
         }
     )
+
+      if #parsedLine > 254 then
+        AFKAnsweringMachine.RandomizeUtil.ResetContext("pickedLine")
+        return AFKAnsweringMachine.AnsweringMachine.GetMessage(playerName,
+    playerGender,
+    playerClass,
+    playerRace,
+    playerLevel,
+    playerManWoman,
+    playerGuyGirl,
+    playerHisHer,
+    playerHeShe)
+    else
+        return parsedLine
+    end
 end
 
 function AFKAnsweringMachine.AnsweringMachine.run()
