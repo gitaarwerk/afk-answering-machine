@@ -8,12 +8,17 @@ move-folders:
 ignore: # Files and directories beginning with a dot (such as .git) are automatically ignored, as is the pgkmeta file itself.
   - LICENSE
   - README.md
-  - curseForgeText.txt
   - pkgmeta.yaml
   - .gitignore
   - node_modules
   - package.json
-  
+  - package-lock.json
+  - scripts
+  - tests
+  - pnpm-lock.yaml
+  - public/Src
+  - .idea
+  - .vscode
+  - .DS_Store
 
 license-output: LICENSE.txt
-
